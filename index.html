@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Islamic App - All Features</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://i.ibb.co/sWk7TfH/bg-masjid.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #222;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: #004d40;
+            padding: 0.5rem;
+        }
+
+        nav button {
+            margin: 0.3rem;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #a7ffeb;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode .container {
+            background-color: #1e1e1e;
+        }
+
+        footer {
+            text-align: center;
+            background: #004d40;
+            color: white;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .img-feature {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📱 Islamic App – Complete Features</h1>
+        <p>Powered by HTML, CSS & JavaScript</p>
+    </header>
+    <nav id="navMenu"></nav>
+    <div class="container" id="mainContent">
+        <h2>Welcome to the Ultimate Islamic App</h2>
+        <p>Select a feature from above to get started! 🌙</p>
+        <img src="https://i.ibb.co/pJ2Y03h/mosque.png" alt="Mosque" class="img-feature" />
+    </div>
+    <footer>&copy; 2025 Islamic App. All Rights Reserved.</footer>
+
+    <script>
+        const features = {
+            zikir: "🧕 Zikir Counter",
+            quran: "📖 Quran (114 Surahs)",
+            tafsir: "📖 Tafsir & Translation",
+            hadith: "📚 Hadith Books",
+            audio: "🔊 Quran MP3",
+            prayer: "🕋 Prayer Times",
+            zakat: "💰 Zakat Calculator",
+            calendar: "📅 Islamic Calendar",
+            quiz: "❓ Islamic Quiz",
+            kids: "👶 Kids Zone",
+            dark: "🌙 Dark Mode",
+            stories: "👑 Prophet Stories"
+        };
+
+        // Render nav buttons
+        const nav = document.getElementById("navMenu");
+        for (const key in features) {
+            const btn = document.createElement("button");
+            btn.innerText = features[key];
+            btn.onclick = () => loadFeature(key);
+            nav.appendChild(btn);
+        }
+
+        const content = document.getElementById("mainContent");
+
+        function loadFeature(key) {
+            switch (key) {
+                case "zikir":
+                    content.innerHTML = `
+            <div class="card">
+              <h2>🧕 Zikir Counter</h2>
+              <p>Click to count your Zikir</p>
+              <h1 id="zikirCount">0</h1>
+              <button onclick="document.getElementById('zikirCount').innerText++">Zikir ➕</button>
+              <button onclick="document.getElementById('zikirCount').innerText=0">Reset 🔄</button>
+            </div>`;
+                    break;
+                case "quran":
+                    content.innerHTML = `
+            <div class="card">
+              <h2>📖 114 Surahs of Quran</h2>
+              <ul>
+                ${Array.from({ length: 114 }, (_, i) => `<li>Surah ${i + 1}</li>`).join('')}
+              </ul>
+            </div>`;
+                    break;
+                case "tafsir":
+                    content.innerHTML = `
+            <div class="card">
+              <h2>📖 Tafsir (Bangla & English)</h2>
+              <p>Surah Al-Fatiha:</p>
+              <p><b>Bangla:</b> সমস্ত প্রশংসা আল্লাহর জন্য...</p>
+              <p><b>English:</b> All praise is due to Allah...</p>
+              <p><b>Tafsir:</b> This Surah emphasizes monotheism and supplication.</p>
+            </div>`;
+                    break;
+                case "hadith":
+                    content.innerHTML = `
+            <div class="card">
+              <h2>📚 6 Hadith Books (Bangla & English)</h2>
+              <ul>
+                <li>Sahih Bukhari</li>
+                <li>Sahih Muslim</li>
+                <li>Abu Dawood</li>
+                <li>Tirmidhi</li>
+                <li>Nasai</li>
+                <li>Ibn Majah</li>
+              </ul>
+              <p><b>Example (Bangla):</b> "নিয়ত অনুযায়ী কাজ গণ্য হবে..."</p>
+              <p><b>English:</b> "Actions are judged by intentions..."</p>
+            </div>`;
+                    break;
+                case "audio":
+                    content.innerHTML = `
+            <div class="card">
+              <h2>🔊 Quran Recitation (MP3)</h2>
+              <audio controls>
+                <source src="https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/001.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+              </audio>
+              <p>Surah Al-Fatiha Recitation</p>
+            </div>`;
+                    break;
+                case "prayer":
+                    content.innerHTML = `
+            <div class="card">
+              <h2>🕋 5 Prayer Times with Images</h2>
+              <ul>
+                <li>Fajr 🌅 <img src="https://i.ibb.co/LkxkNh2/fajr.jpg" class="img-feature"/></li>
+                <li>Dhuhr ☀️ <img src="https://i.ibb.co/BzLbRQ0/dhuhr.jpg" class="img-feature"/></li>
+                <li>Asr 🌤️ <img src="https://i.ibb.co/7VPDdhZ/asr.jpg" class="img-feature"/></li>
+                <li>Maghrib 🌇 <img src="https://i.ibb.co/d2KbbqG/maghrib.jpg" class="img-feature"/></li>
+                <li>Isha 🌌 <img src="https://i.ibb.co/Fz1BpLz/isha.jpg" class="img-feature"/></li>
+              </ul>
+            </div>`;
+                    break;
+                case "zakat":
+                    content.innerHTML = `
+            <div class="card">
+              <h2>💰 Zakat Calculator</h2>
+              <p>Enter total wealth (in Taka):</p>
+              <input id="wealth" type="number" placeholder="Amount"/>
+              <button onclick="calcZakat()">Calculate Zakat</button>
+              <p id="zakatResult"></p>
+            </div>`;
+                    break;
+                case "calendar":
+                    content.innerHTML = `
+            <div class="card">
+              <h2>📅 Islamic Calendar</h2>
+              <p>Today’s Islamic Date: <b>${new Date().toLocaleDateString()}</b> (Adjust manually for Hijri)</p>
+            </div>`;
+                    break;
+                case "quiz":
+                    content.innerHTML = `
+            <div class="card">
+              <h2>❓ Islamic Quiz</h2>
+              <p>Q: How many Surahs are in the Quran?</p>
+              <button onclick="alert('Correct ✅')">114</button>
+              <button onclick="alert('Try Again ❌')">112</button>
+            </div>`;
+                    break;
+                case "kids":
+                    content.innerHTML = `
+            <div class="card">
+              <h2>👶 Kids Islamic Learning</h2>
+              <ul>
+                <li>Arabic Alphabets</li>
+                <li>Small Surahs</li>
+                <li>5 Pillars of Islam</li>
+                <li>Prophet Stories</li>
+              </ul>
+            </div>`;
+                    break;
+                case "dark":
+                    document.body.classList.toggle("dark-mode");
+                    break;
+                case "stories":
+                    content.innerHTML = `
+            <div class="card">
+              <h2>👑 Stories of Prophets</h2>
+              <p><b>1. Adam (AS):</b> First human created by Allah. Taught names of all things. Story of Iblis rejecting him.</p>
+              <p><b>2. Nuh (AS):</b> Built an Ark to save believers from the flood. 950 years of Dawah.</p>
+              <p><b>3. Ibrahim (AS):</b> Destroyed idols, tested with son Ismail. Built the Kaaba.</p>
+              <p><b>4. Musa (AS):</b> Freed Bani Israel from Pharaoh with Allah’s help.</p>
+              <p><b>5. Muhammad ﷺ:</b> Final Prophet. Quran revealed to him in 23 years.</p>
+            </div>`;
+                    break;
+                default:
+                    content.innerHTML = "<p>Feature not found!</p>";
+            }
+        }
+
+        function calcZakat() {
+            const amount = document.getElementById('wealth').value;
+            if (amount && !isNaN(amount)) {
+                const zakat = (amount * 0.025).toFixed(2);
+                document.getElementById('zakatResult').innerText = `Zakat Amount: ৳${zakat}`;
+            } else {
+                document.getElementById('zakatResult').innerText = "Please enter a valid amount.";
+            }
+        }
+    </script>
+</body>
+
+</html>
