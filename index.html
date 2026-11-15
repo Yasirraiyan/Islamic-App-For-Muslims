@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Islamic App — Quran, Hadith, Prophet Stories, Prayer Times, Zakat Calculator and more." />
+    <title>Islamic App — Complete Features</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/prophets.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="app-header">
+        <div class="app-header__inner">
+            <div class="app-header__brand">
+                <span class="app-header__logo">☪️</span>
+                <div>
+                    <h1 class="app-header__title">Islamic App</h1>
+                    <p class="app-header__subtitle">Complete Features · Quran · Hadith · Prophets</p>
+                </div>
+            </div>
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                <span class="theme-toggle__icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="app-nav" id="navMenu" aria-label="Main navigation"></nav>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="app-main">
+        <div class="container" id="mainContent" role="main">
+            <!-- Initial welcome view -->
+            <section class="welcome">
+                <div class="welcome__hero">
+                    <h2>Welcome to the Ultimate Islamic App 🌙</h2>
+                    <p>Select a feature from the navigation above to begin your journey.</p>
+                </div>
+                <img src="https://i.ibb.co/pJ2Y03h/mosque.png" alt="Mosque" class="welcome__image" />
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== DETAIL PAGE OVERLAY (PROPHETS) ===== -->
+    <div id="detailPage" class="detail-page" role="dialog" aria-modal="true" aria-label="Prophet details">
+        <div class="detail-page__container" id="detailContent"></div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="app-footer">
+        <p>&copy; 2025 Islamic App · Built with ❤️ for the Ummah</p>
+    </footer>
+
+    <!-- ===== SCRIPTS (ordered) ===== -->
+    <script src="js/core/dom.js"></script>
+    <script src="js/core/router.js"></script>
+
+    <script src="js/data/prophets.js"></script>
+
+    <script src="js/features/zikir.js"></script>
+    <script src="js/features/quran.js"></script>
+    <script src="js/features/tafsir.js"></script>
+    <script src="js/features/hadith.js"></script>
+    <script src="js/features/audio.js"></script>
+    <script src="js/features/prayer.js"></script>
+    <script src="js/features/zakat.js"></script>
+    <script src="js/features/calendar.js"></script>
+    <script src="js/features/quiz.js"></script>
+    <script src="js/features/kids.js"></script>
+    <script src="js/features/prophets.js"></script>
+
+    <script src="js/ui/theme.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
