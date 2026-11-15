@@ -1,0 +1,139 @@
+/* ============================================================
+   BASE — Reset, CSS Variables, Typography
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Brand palette */
+    --c-primary: #004d40;
+    --c-primary-light: #00695c;
+    --c-primary-dark: #00332c;
+    --c-accent: #b8924a;
+    --c-accent-light: #d9b87a;
+    --c-accent-soft: #f9f3eb;
+
+    /* Neutrals */
+    --c-bg: #f4f6f5;
+    --c-bg-image: url('https://i.ibb.co/sWk7TfH/bg-masjid.jpg');
+    --c-surface: #ffffff;
+    --c-surface-alt: #faf7f2;
+    --c-surface-elev: #f1ede6;
+    --c-border: #e3d9cd;
+    --c-border-soft: #f0eae2;
+
+    /* Text */
+    --c-text: #1e2b2e;
+    --c-text-muted: #5c6e6b;
+    --c-text-on-primary: #ffffff;
+
+    /* Status */
+    --c-success: #2e7d32;
+    --c-danger: #c62828;
+    --c-warning: #f57c00;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 24px rgba(0, 40, 30, 0.10);
+    --shadow-lg: 0 24px 48px -12px rgba(0, 40, 30, 0.18);
+
+    /* Radii */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+    --radius-xl: 36px;
+    --radius-pill: 999px;
+
+    /* Spacing scale */
+    --sp-1: 0.25rem;
+    --sp-2: 0.5rem;
+    --sp-3: 0.75rem;
+    --sp-4: 1rem;
+    --sp-5: 1.5rem;
+    --sp-6: 2rem;
+    --sp-7: 3rem;
+
+    /* Typography */
+    --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    --font-arabic: 'Amiri', 'Traditional Arabic', serif;
+
+    /* Transitions */
+    --t-fast: 0.15s ease;
+    --t-normal: 0.25s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--c-text);
+    background: var(--c-bg-image) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--c-text);
+}
+
+a {
+    color: var(--c-primary);
+    text-decoration: none;
+    transition: color var(--t-fast);
+}
+
+a:hover { color: var(--c-primary-light); }
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img { max-width: 100%; display: block; }
+
+ul { list-style: none; }
+
+/* Arabic text helper */
+.arabic {
+    font-family: var(--font-arabic);
+    direction: rtl;
+    text-align: right;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--c-surface-alt); }
+::-webkit-scrollbar-thumb {
+    background: var(--c-accent-light);
+    border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--c-accent); }

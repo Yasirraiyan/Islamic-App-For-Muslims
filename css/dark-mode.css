@@ -1,0 +1,152 @@
+/* ============================================================
+   DARK MODE — Overrides when <body class="theme-dark">
+   ============================================================ */
+
+body.theme-dark {
+    --c-bg: #0f1412;
+    --c-surface: #1a1f1d;
+    --c-surface-alt: #232927;
+    --c-surface-elev: #2a302e;
+    --c-border: #3a403e;
+    --c-border-soft: #2f3533;
+
+    --c-text: #e8ece9;
+    --c-text-muted: #a5b0ab;
+    --c-text-on-primary: #ffffff;
+
+    --c-primary: #26a69a;
+    --c-primary-light: #4db6ac;
+    --c-primary-dark: #1e3d35;
+    --c-accent: #d9b87a;
+    --c-accent-light: #e6cf9a;
+    --c-accent-soft: #3a3328;
+
+    background-image: none;
+    background: #0f1412;
+}
+
+body.theme-dark .app-header {
+    background: linear-gradient(135deg, rgba(15, 20, 18, 0.96), rgba(26, 31, 29, 0.96));
+}
+
+body.theme-dark .app-nav {
+    background: #1e3d35;
+}
+
+body.theme-dark .app-nav__btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: #cfe8e3;
+}
+
+body.theme-dark .app-nav__btn.is-active {
+    background: var(--c-accent);
+    color: #1a1f1d;
+}
+
+body.theme-dark .app-footer {
+    background: #0a0f0d;
+    color: #7d8f88;
+}
+
+body.theme-dark .container,
+body.theme-dark .card,
+body.theme-dark .prophet-card,
+body.theme-dark .detail-page__container {
+    background: var(--c-surface);
+    color: var(--c-text);
+    border-color: var(--c-border-soft);
+}
+
+body.theme-dark .card__title,
+body.theme-dark .prophet-card__name,
+body.theme-dark .detail-header h2,
+body.theme-dark .detail-section__title,
+body.theme-dark .welcome__hero h2,
+body.theme-dark .prophets-header h2 {
+    color: var(--c-accent-light);
+}
+
+body.theme-dark .prophet-card__summary,
+body.theme-dark .welcome__hero p,
+body.theme-dark .prophets-header p {
+    color: var(--c-text-muted);
+}
+
+body.theme-dark .arabic-verse {
+    background: #232927;
+    color: #f0e6d2;
+    border-color: #3a403e;
+}
+
+body.theme-dark .reference-box,
+body.theme-dark .hadith-box {
+    background: var(--c-surface-alt);
+    border-color: var(--c-border);
+}
+
+body.theme-dark .hadith-box__arabic { color: #d4c9b8; }
+
+body.theme-dark .hadith-box__translation { color: var(--c-text); }
+
+body.theme-dark .detail-page {
+    background: rgba(15, 20, 18, 0.97);
+}
+
+body.theme-dark .detail-back {
+    background: var(--c-surface-alt);
+    color: var(--c-accent-light);
+    border-color: var(--c-border);
+}
+
+body.theme-dark .detail-back:hover {
+    background: var(--c-surface-elev);
+    border-color: var(--c-accent);
+}
+
+body.theme-dark .styled-list li {
+    background: var(--c-surface-alt);
+    color: var(--c-text);
+}
+
+body.theme-dark .styled-list li:hover {
+    background: var(--c-surface-elev);
+}
+
+body.theme-dark .surah-item {
+    background: var(--c-surface-alt);
+    color: var(--c-text);
+    border-color: var(--c-border-soft);
+}
+
+body.theme-dark .prayer-item {
+    background: var(--c-surface-alt);
+    border-color: var(--c-border-soft);
+}
+
+body.theme-dark .prayer-item__label { color: var(--c-accent-light); }
+
+body.theme-dark .kids-card {
+    background: linear-gradient(135deg, #2a302e, #1a1f1d);
+    color: var(--c-accent-light);
+    border-color: var(--c-border);
+}
+
+body.theme-dark .form-input {
+    background: var(--c-surface-alt);
+    color: var(--c-text);
+    border-color: var(--c-border);
+}
+
+body.theme-dark .result-box {
+    background: var(--c-surface-alt);
+    color: var(--c-accent-light);
+}
+
+body.theme-dark .prophet-card__btn {
+    background: var(--c-primary);
+    color: #0f1412;
+}
+
+body.theme-dark .prophet-card__btn:hover {
+    background: var(--c-primary-light);
+}

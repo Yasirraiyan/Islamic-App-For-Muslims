@@ -1,0 +1,181 @@
+/* ============================================================
+   COMPONENTS — Cards, Buttons, Forms, Badges
+   ============================================================ */
+
+/* ---------- CARD ---------- */
+.card {
+    background: var(--c-surface);
+    border-radius: var(--radius-md);
+    padding: var(--sp-5);
+    margin-bottom: var(--sp-4);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--c-border-soft);
+    transition: box-shadow var(--t-normal);
+}
+
+.card:hover { box-shadow: var(--shadow-md); }
+
+.card__title {
+    font-size: 1.25rem;
+    color: var(--c-primary);
+    margin-bottom: var(--sp-3);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+}
+
+.card__body { color: var(--c-text-muted); }
+
+/* ---------- BUTTON ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-2);
+    padding: 0.65rem 1.25rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all var(--t-fast);
+    border: 2px solid transparent;
+    white-space: nowrap;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn--primary {
+    background: var(--c-primary);
+    color: var(--c-text-on-primary);
+    box-shadow: 0 4px 12px rgba(0, 77, 64, 0.3);
+}
+.btn--primary:hover {
+    background: var(--c-primary-light);
+    box-shadow: 0 6px 18px rgba(0, 77, 64, 0.35);
+}
+
+.btn--accent {
+    background: var(--c-accent);
+    color: var(--c-primary-dark);
+    box-shadow: 0 4px 12px rgba(184, 146, 74, 0.35);
+}
+.btn--accent:hover {
+    background: var(--c-accent-light);
+}
+
+.btn--ghost {
+    background: transparent;
+    color: var(--c-primary);
+    border-color: var(--c-border);
+}
+.btn--ghost:hover {
+    background: var(--c-surface-alt);
+    border-color: var(--c-accent);
+}
+
+.btn--icon { padding: 0.65rem; }
+
+/* ---------- FORM ---------- */
+.form-group { margin-bottom: var(--sp-3); }
+
+.form-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--c-text-muted);
+    margin-bottom: var(--sp-1);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--c-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color var(--t-fast), box-shadow var(--t-fast);
+    background: var(--c-surface);
+    color: var(--c-text);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--c-accent);
+    box-shadow: 0 0 0 4px rgba(184, 146, 74, 0.15);
+}
+
+/* ---------- BADGE ---------- */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--c-accent-soft);
+    color: var(--c-accent);
+    letter-spacing: 0.3px;
+}
+
+.badge--primary {
+    background: rgba(0, 77, 64, 0.1);
+    color: var(--c-primary);
+}
+
+/* ---------- LIST ---------- */
+.styled-list {
+    display: grid;
+    gap: var(--sp-2);
+}
+
+.styled-list li {
+    padding: var(--sp-2) var(--sp-3);
+    background: var(--c-surface-alt);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--c-accent);
+    font-size: 0.9rem;
+    transition: transform var(--t-fast);
+}
+
+.styled-list li:hover {
+    transform: translateX(4px);
+    background: var(--c-accent-soft);
+}
+
+/* ---------- RESULT ---------- */
+.result-box {
+    margin-top: var(--sp-3);
+    padding: var(--sp-3) var(--sp-4);
+    background: var(--c-surface-alt);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--c-accent);
+    font-weight: 600;
+    color: var(--c-primary);
+    min-height: 2.5rem;
+}
+
+/* ---------- WELCOME ---------- */
+.welcome { text-align: center; }
+
+.welcome__hero h2 {
+    font-size: 2rem;
+    color: var(--c-primary);
+    margin-bottom: var(--sp-2);
+}
+
+.welcome__hero p {
+    color: var(--c-text-muted);
+    margin-bottom: var(--sp-5);
+}
+
+.welcome__image {
+    border-radius: var(--radius-lg);
+    max-height: 320px;
+    object-fit: cover;
+    width: 100%;
+    box-shadow: var(--shadow-md);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+    .welcome__hero h2 { font-size: 1.4rem; }
+    .card { padding: var(--sp-4); }
+}
